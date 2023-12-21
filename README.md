@@ -1,4 +1,4 @@
-**YearbookBoard - לוח שנתון**
+📅**YearbookBoard - לוח שנתון**
 
 **Description :** מערכת לניהול פרטים ועדכונים בשנתון
 
@@ -12,7 +12,7 @@
 
 **Entities detail - פירוט הישויות**
 
-*TelephoneBoardController - לוח טלפונים*
+☎*TelephoneBoardController - לוח טלפונים*
 
 - GET: [https://YearbookBoard.co.il/TelephoneBoard](https://YearbookBoard.co.il/telephone-boards) - מחזיר את כל לוחות הטלפון
 
@@ -24,7 +24,7 @@
 
 - DELETE: [https://YearbookBoard.co.il/TelephoneBoard{id}](https://YearbookBoard.co.il/telephone-boards/{id}) - מוחק לוח טלפון קיים
 
-*EventsController - רשימת אירועים*
+👰*EventsController - רשימת אירועים*
 
 - GET: [https://YearbookBoard.co.il/Events](https://YearbookBoard.co.il/events) - מחזיר את כל האירועים
 
@@ -36,7 +36,7 @@
 
 - DELETE: [https://YearbookBoard.co.il/Events{id}](https://YearbookBoard.co.il/events/{id}) - מוחק אירוע קיים
 
-*UpdatesController - רשימת עדכונים והודעות*
+✉*UpdatesController - רשימת עדכונים והודעות*
 
 - GET: [https://YearbookBoard.co.il/Updates](https://YearbookBoard.co.il/updates) - מחזיר את כל העידכונים
 
