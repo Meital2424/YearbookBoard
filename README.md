@@ -1,35 +1,49 @@
-[YearbookBoard](https:// YearbookBoard.co.il) - לוח שנתון
+**YearbookBoard - לוח שנתון**
 
-TelephoneBoardController - לוח טלפונים
+**Description :** מערכת לניהול פרטים ועדכונים בשנתון
 
-GET: [YearbookBoard](https:// YearbookBoard.co.il /telephone-boards) - מחזיר את כל לוחות הטלפון
+**Entities - ישויות**
 
-GET: [YearbookBoard](https:// YearbookBoard.co.il /telephone-boards/{id}) - מחזיר את לוח הטלפון לפי מזהה
+- *TelephoneBoardController - לוח טלפונים*
 
-POST: [YearbookBoard](https:// YearbookBoard.co.il /telephone-boards) - יוצר לוח טלפון חדש
+- *EventsController - רשימת אירועים*
 
-DELETE: [YearbookBoard](https:// YearbookBoard.co.il /telephone-boards/{id}) - מוחק לוח טלפון קיים
+- *UpdatesController - רשימת עדכונים והודעות*
 
-EventsController - רשימת אירועים
+**Entities detail - פירוט הישויות**
 
-GET: [YearbookBoard](https:// YearbookBoard.co.il /events) - מחזיר את כל האירועים
+*TelephoneBoardController - לוח טלפונים*
 
-GET: [YearbookBoard](https:// YearbookBoard.co.il /events/{id}) - מחזיר את האירוע לפי מזהה
+- GET: [https://YearbookBoard.co.il/TelephoneBoard](https://YearbookBoard.co.il/telephone-boards) - מחזיר את כל לוחות הטלפון
 
-POST: [YearbookBoard](https:// YearbookBoard.co.il /events) - יוצר אירוע חדש
+- GET: [https://YearbookBoard.co.il/TelephoneBoard{id}](https://YearbookBoard.co.il/telephone-boards/{id}) - מחזיר את לוח הטלפון לפי מזהה
 
-PUT: [YearbookBoard](https:// YearbookBoard.co.il /events/{id}) - מעדכן אירוע קיים
+- POST: [https://YearbookBoard.co.il/TelephoneBoard](https://YearbookBoard.co.il/telephone-boards) - יוצר לוח טלפון חדש
 
-DELETE: [YearbookBoard](https:// YearbookBoard.co.il /events/{id}) - מוחק אירוע קיים
+- PUT: [https://YearbookBoard.co.il/TelephoneBoard{id}](https://YearbookBoard.co.il/telephone-boards/{id}) - מעדכן לוח טלפון קיים
 
-UpdatesController - רשימת עדכונים והודעות
+- DELETE: [https://YearbookBoard.co.il/TelephoneBoard{id}](https://YearbookBoard.co.il/telephone-boards/{id}) - מוחק לוח טלפון קיים
 
-GET: [YearbookBoard](https:// YearbookBoard.co.il /updates) - מחזיר את כל העידכונים
+*EventsController - רשימת אירועים*
 
-GET: [YearbookBoard](https:// YearbookBoard.co.il /updates/{id}) - מחזיר את העדכון לפי מזהה
+- GET: [https://YearbookBoard.co.il/Events](https://YearbookBoard.co.il/events) - מחזיר את כל האירועים
 
-POST: [YearbookBoard](https:// YearbookBoard.co.il /updates) - יוצר עדכון חדש
+- GET: [https://YearbookBoard.co.il/Events{id}](https://YearbookBoard.co.il/events/{id}) - מחזיר את האירוע לפי מזהה
 
-PUT: [YearbookBoard](https:// YearbookBoard.co.il /updates/{id}) - מעדכן עדכון קיים
+- POST: [https://YearbookBoard.co.il/Events](https://YearbookBoard.co.il/events) - יוצר אירוע חדש
 
-DELETE: [YearbookBoard](https:// YearbookBoard.co.il /updates/{id}) - מוחק עדכון קיים
+- PUT: [https://YearbookBoard.co.il/Events{id}](https://YearbookBoard.co.il/events/{id}) - מעדכן אירוע קיים
+
+- DELETE: [https://YearbookBoard.co.il/Events{id}](https://YearbookBoard.co.il/events/{id}) - מוחק אירוע קיים
+
+*UpdatesController - רשימת עדכונים והודעות*
+
+- GET: [https://YearbookBoard.co.il/Updates](https://YearbookBoard.co.il/updates) - מחזיר את כל העידכונים
+
+- GET: [https://YearbookBoard.co.il/Updates{id}](https://YearbookBoard.co.il/updates/{id}) - מחזיר את העדכון לפי מזהה
+
+- POST: [https://YearbookBoard.co.il/Updates](https://YearbookBoard.co.il/updates) - יוצר עדכון חדש
+
+- PUT: [https://YearbookBoard.co.il/Updates{id}](https://YearbookBoard.co.il/updates/{id}) - מעדכן עדכון קיים
+
+- DELETE: [https://YearbookBoard.co.il/Updates{id}](https://YearbookBoard.co.il/updates/{id}) - מוחק עדכון קיים
