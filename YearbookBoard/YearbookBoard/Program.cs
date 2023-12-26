@@ -18,7 +18,8 @@ internal class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton<DataContext>();
+        //builder.Services.AddSingleton<DataContext>();
+        builder.Services.AddDbContext<DataContext>();
         builder.Services.AddScoped<IEventRepository, EventRepository>();
         builder.Services.AddScoped<ITelephoneBoardRepository, TelephoneBoardRepository>();
         builder.Services.AddScoped<IUpdatesRepository, UpdatesRepository>();

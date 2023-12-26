@@ -1,22 +1,34 @@
-﻿using YearbookBoard.Core.Entities;
+﻿//התקנת הפאקג'ים
+using Microsoft.EntityFrameworkCore; 
+using YearbookBoard.Core.Entities;
 
 namespace YearbookBoard.Data
 {
-    public class DataContext
+    // DbContext הגדרת הורשה של 
+    //DbSet -וכן שינוי הסוג מליסט ל
+    public class DataContext : DbContext
     {
-        public List<Event> EventList { get; set; }
+        public DbSet<Event> EventList { get; set; }
 
-        public List<TelephoneBoard> TelephoneBoardList { get; set; }
+        public DbSet<TelephoneBoard> TelephoneBoardList { get; set; }
 
-        public List<Updates> UpdatesList { get; set; }
+        public DbSet<Updates> UpdatesList { get; set; }
 
-        public DataContext()
+        // OnConfiguring דריסת הפונקציה 
+        // שימוש בדטאבייס לוקאלי
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            EventList = new List<Event>();
-
-            TelephoneBoardList = new List<TelephoneBoard>();
-
-            UpdatesList = new List<Updates>();
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=meital_db");
         }
+
+
+        //public DataContext()
+        //{
+        //    EventList = new List<Event>();
+
+        //    TelephoneBoardList = new List<TelephoneBoard>();
+
+        //    UpdatesList = new List<Updates>();
+        //}
     }
 }

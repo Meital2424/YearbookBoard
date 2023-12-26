@@ -18,6 +18,7 @@ namespace YearbookBoard.Core.Repositorys
         public void PutTelephneBoard(int id, TelephoneBoard t);
 
         public void RemoveTelephoneBoard(int telephoneId);
+
         void RemoveTelephoneBoard(TelephoneBoard t);
     }
 }

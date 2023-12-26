@@ -8,7 +8,7 @@ namespace YearbookBoard.Core.Entities
 {
     public class TelephoneBoard
     {
-        public int TelephoneId { get; set; }
+        public int Id { get; set; }
 
         public String? Name { get; set; }
 

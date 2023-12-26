@@ -19,12 +19,12 @@ namespace YearbookBoard.Data.Repository
 
         public List<Updates> GetAllUpdates()
         {
-            return _UpdatesRepository.UpdatesList;
+            return _UpdatesRepository.UpdatesList.ToList();
         }
 
         public Updates GetUpdetes(int id)
         {
-            return _UpdatesRepository.UpdatesList.Find(u => u.Id == id);
+            return _UpdatesRepository.UpdatesList.ToList().Find(u => u.Id == id);
         }
 
         public void AddUpdetes(Updates updates)
@@ -51,7 +51,7 @@ namespace YearbookBoard.Data.Repository
 
         public void RemoveUpdetes(int id)
         {
-            var pu = _UpdatesRepository.UpdatesList.Find(pu => pu.Id == id);
+            var pu = _UpdatesRepository.UpdatesList.ToList().Find(pu => pu.Id == id);
             if (pu != null)
                 _UpdatesRepository.UpdatesList.Remove(pu);
         }

@@ -19,7 +19,7 @@ namespace YearbookBoard.Data.Repository
 
         public List<Event> GetAllEvents()
         {
-            return _eventRepository.EventList;
+            return _eventRepository.EventList.ToList();
         }
 
         public Event GetEventById(int id)
@@ -62,7 +62,7 @@ namespace YearbookBoard.Data.Repository
 
         public void RemoveEvent(int id)
         {
-            var ev = _eventRepository.EventList.Find(u => u.Id == id);
+            var ev = _eventRepository.EventList.ToList().Find(u => u.Id == id);
             if (ev != null)
                 _eventRepository.EventList.Remove(ev);
         }

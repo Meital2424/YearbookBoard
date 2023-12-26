@@ -19,19 +19,19 @@ namespace YearbookBoard.Data.Repository
 
         public List<TelephoneBoard> GetAllTelephoneBoard()
         {
-            return _telephoneBoardRepository.TelephoneBoardList;
+            return _telephoneBoardRepository.TelephoneBoardList.ToList();
         }
 
         public TelephoneBoard GetTelephoneBoard(int telephoneId)
         {
-            return _telephoneBoardRepository.TelephoneBoardList.Find(t => t.TelephoneId == telephoneId);
+            return _telephoneBoardRepository.TelephoneBoardList.ToList().Find(t => t.Id == telephoneId);
         }
 
         public void AddTelephneBoard(TelephoneBoard t)
         {
             _telephoneBoardRepository.TelephoneBoardList.Add(new TelephoneBoard
             {
-                TelephoneId = t.TelephoneId,
+                Id = t.Id,
                 Name = t.Name,
                 FamilyN = t.FamilyN,
                 NumClass = t.NumClass,
@@ -42,7 +42,7 @@ namespace YearbookBoard.Data.Repository
 
         public void PutTelephneBoard(int id ,TelephoneBoard t)
         {
-            var ptb = _telephoneBoardRepository.TelephoneBoardList.Find(tb => tb.TelephoneId == id);
+            var ptb = _telephoneBoardRepository.TelephoneBoardList.ToList().Find(tb => tb.Id == id);
             if (ptb != null)
             {
                 ptb.Name = t.Name;
@@ -56,14 +56,14 @@ namespace YearbookBoard.Data.Repository
 
         public void RemoveTelephoneBoard(int id)
         {
-            var dtb = _telephoneBoardRepository.TelephoneBoardList.Find(d => d.TelephoneId == id);
+            var dtb = _telephoneBoardRepository.TelephoneBoardList.ToList().Find(d => d.Id == id);
             if(dtb != null)
                 _telephoneBoardRepository.TelephoneBoardList.Remove(dtb);
         }
 
         public void RemoveTelephoneBoard(TelephoneBoard t)
         {
-            var dtb = _telephoneBoardRepository.TelephoneBoardList.Find(d => d.TelephoneId == t.TelephoneId);
+            var dtb = _telephoneBoardRepository.TelephoneBoardList.ToList().Find(d => d.Id == t.Id);
             if (dtb != null)
                 _telephoneBoardRepository.TelephoneBoardList.Remove(dtb);
         }
