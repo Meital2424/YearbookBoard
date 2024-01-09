@@ -22,9 +22,9 @@ namespace YearbookBoard.Api.Controllers
       
         // GET: api/<EventsController>
         [HttpGet]
-        public ActionResult Get()
+        public IEnumerable<Event> Get()
         {
-            return Ok(_eventManager.GetEvents());
+            return _eventManager.GetAllEvents();
         }
 
         // GET api/<EventsController>/5
@@ -40,9 +40,9 @@ namespace YearbookBoard.Api.Controllers
 
         // POST api/<EventsController>
         [HttpPost]
-        public void Post([FromBody] Event e)
+        public ActionResult Post([FromBody] Event e)
         {
-            _eventManager.AddEvent(e);
+           return Ok( _eventManager.AddEvent(e));
             //_context.AddOne();
             //_context._events.Add(new Event
             //{
@@ -58,9 +58,9 @@ namespace YearbookBoard.Api.Controllers
 
         // PUT api/<EventsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Event e)
+        public ActionResult Put(int id, [FromBody] Event e)
         {
-            _eventManager.PutEvent(id, e);
+            return Ok(_eventManager.PutEvent(id, e));
             //var events = _context._events.Find(e => e.NumClass == id);
             //if (events == null)
             //    return NotFound();

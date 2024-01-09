@@ -19,37 +19,30 @@ namespace YearbookBoard.Service
             _eventRepository = eventRepository;
         }
 
-        public List<Event> GetAllEvents()
+        public Event AddEvent(Event e)
+        { 
+               return _eventRepository.AddEvent(e);           
+        }
+
+        public IEnumerable<Event> GetAllEvents()
         {
             return _eventRepository.GetAllEvents();
         }
 
         public Event GetEventById(int id)
         {
-            return _eventRepository.GetEventById(id);
+            return _eventRepository.GetEvent(id);
         }
 
-        public List<Event> GetEvents()
+        public Event PutEvent(int id, Event e)
         {
-            return _eventRepository.GetAllEvents();
-        }
-
-        public void AddEvent(Event e)
-        {
-            _eventRepository.AddEvent(e);
-        }
-
-        public void PutEvent(int id, Event e)
-        {
-            _eventRepository.PutEvent(id, e);
+            return _eventRepository.PutEvent(id, e);
         }
 
         public void RemoveEvent(int id)
         {
             _eventRepository.RemoveEvent(id);
-        }
-
-        
+        }       
     }
 }
 

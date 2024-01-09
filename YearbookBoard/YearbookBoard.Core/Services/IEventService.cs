@@ -9,15 +9,15 @@ namespace YearbookBoard.Core.Services
 {
     public interface IEventService
     {
-        public List<Event> GetAllEvents();
+        public IEnumerable<Event> GetAllEvents();
 
         public Event GetEventById(int id);
 
-        public List<Event> GetEvents();
+       
 
-        public void AddEvent(Event e);
+        public Event AddEvent(Event e);
 
-        public void PutEvent(int id, Event e);
+        public Event PutEvent(int id, Event e);
 
         public void RemoveEvent(int id);
 

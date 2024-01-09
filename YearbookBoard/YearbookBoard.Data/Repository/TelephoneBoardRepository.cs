@@ -19,30 +19,25 @@ namespace YearbookBoard.Data.Repository
 
         public List<TelephoneBoard> GetAllTelephoneBoard()
         {
-            return _telephoneBoardRepository.TelephoneBoardList.ToList();
+            return _telephoneBoardRepository.TelephoneBoards.ToList();
         }
 
         public TelephoneBoard GetTelephoneBoard(int telephoneId)
         {
-            return _telephoneBoardRepository.TelephoneBoardList.ToList().Find(t => t.Id == telephoneId);
+            return _telephoneBoardRepository.TelephoneBoards.Find(telephoneId);
         }
 
-        public void AddTelephneBoard(TelephoneBoard t)
+        public TelephoneBoard AddTelephneBoard(TelephoneBoard t)
         {
-            _telephoneBoardRepository.TelephoneBoardList.Add(new TelephoneBoard
-            {
-                Id = t.Id,
-                Name = t.Name,
-                FamilyN = t.FamilyN,
-                NumClass = t.NumClass,
-                TelephoneNumber = t.TelephoneNumber,
-                AdditionalTelephone = t.AdditionalTelephone
-            });
+
+            _telephoneBoardRepository.TelephoneBoards.Add(t);
+            _telephoneBoardRepository.SaveChanges();
+            return t;
         }
 
-        public void PutTelephneBoard(int id ,TelephoneBoard t)
+        public TelephoneBoard PutTelephneBoard(int id ,TelephoneBoard t)
         {
-            var ptb = _telephoneBoardRepository.TelephoneBoardList.ToList().Find(tb => tb.Id == id);
+            var ptb = GetTelephoneBoard(id);
             if (ptb != null)
             {
                 ptb.Name = t.Name;
@@ -51,21 +46,22 @@ namespace YearbookBoard.Data.Repository
                 ptb.TelephoneNumber = t.TelephoneNumber;
                 ptb.AdditionalTelephone = t.AdditionalTelephone;
             }
+            return ptb;
             
         }
 
         public void RemoveTelephoneBoard(int id)
         {
-            var dtb = _telephoneBoardRepository.TelephoneBoardList.ToList().Find(d => d.Id == id);
+            var dtb = GetTelephoneBoard(id);
             if(dtb != null)
-                _telephoneBoardRepository.TelephoneBoardList.Remove(dtb);
+                _telephoneBoardRepository.TelephoneBoards.Remove(dtb);
         }
 
         public void RemoveTelephoneBoard(TelephoneBoard t)
         {
-            var dtb = _telephoneBoardRepository.TelephoneBoardList.ToList().Find(d => d.Id == t.Id);
+            var dtb = _telephoneBoardRepository.TelephoneBoards.ToList().Find(d => d.Id == t.Id);
             if (dtb != null)
-                _telephoneBoardRepository.TelephoneBoardList.Remove(dtb);
+                _telephoneBoardRepository.TelephoneBoards.Remove(dtb);
         }
     }
 }

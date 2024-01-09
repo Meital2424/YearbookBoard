@@ -8,11 +8,11 @@ namespace YearbookBoard.Data
     //DbSet -וכן שינוי הסוג מליסט ל
     public class DataContext : DbContext
     {
-        public DbSet<Event> EventList { get; set; }
+        public DbSet<Event> Events { get; set; }
 
-        public DbSet<TelephoneBoard> TelephoneBoardList { get; set; }
+        public DbSet<TelephoneBoard> TelephoneBoards { get; set; }
 
-        public DbSet<Updates> UpdatesList { get; set; }
+        public DbSet<Updates> Updates { get; set; }
 
         // OnConfiguring דריסת הפונקציה 
         // שימוש בדטאבייס לוקאלי

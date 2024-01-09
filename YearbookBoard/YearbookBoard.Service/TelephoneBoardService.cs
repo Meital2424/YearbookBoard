@@ -33,14 +33,14 @@ namespace YearbookBoard.Service
             return _TelephoneBoard.GetAllTelephoneBoard();
         }
 
-        public void AddTelephneBoard(TelephoneBoard t)
+        public TelephoneBoard AddTelephneBoard(TelephoneBoard t)
         {
-            _TelephoneBoard.AddTelephneBoard(t);
+           return _TelephoneBoard.AddTelephneBoard(t);
         }
 
-        public void PutTelephneBoard(int id, TelephoneBoard t)
+        public TelephoneBoard PutTelephneBoard(int id, TelephoneBoard t)
         {
-            _TelephoneBoard.PutTelephneBoard(id, t);
+            return _TelephoneBoard.PutTelephneBoard(id, t);
         }
 
         public void RemoveTelephoneBoard(TelephoneBoard t)

@@ -39,9 +39,9 @@ namespace YearbookBoard.Api.Controllers
 
         // POST api/<TelephoneBoardController>
         [HttpPost]
-        public void Post([FromBody] TelephoneBoard t)
+        public ActionResult Post([FromBody] TelephoneBoard t)
         {
-            _telephoneBoard.AddTelephneBoard(t);
+            return Ok( _telephoneBoard.AddTelephneBoard(t));
             //_context.AddOne();
             //_context.yearbookBoards.Add(new TelephoneBoard
             //{
@@ -54,9 +54,9 @@ namespace YearbookBoard.Api.Controllers
 
         // PUT api/<TelephoneBoardController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] TelephoneBoard t)
+        public ActionResult Put(int id, [FromBody] TelephoneBoard t)
         {
-            _telephoneBoard.PutTelephneBoard(id, t);
+            return Ok( _telephoneBoard.PutTelephneBoard(id, t));
             //var telephone = _context.yearbookBoards.Find(t => t.NumClass == id);
             //if (telephone == null)
             //    return NotFound();

@@ -9,15 +9,13 @@ namespace YearbookBoard.Core.Repositorys
 {
     public interface IEventRepository
     {
-        public List<Event> GetAllEvents();
+        public IEnumerable<Event> GetAllEvents();
 
-        public Event GetEventById(int id);
+        public Event GetEvent(int id);
 
-        public List<Event> GetEvents();
+        public Event AddEvent(Event e);
 
-        public void AddEvent(Event e);
-
-        public void PutEvent(int id, Event e);
+        public Event PutEvent(int id, Event e);
 
         public void RemoveEvent(int id);
     }

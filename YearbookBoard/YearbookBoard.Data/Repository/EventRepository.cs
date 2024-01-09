@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,45 +12,33 @@ namespace YearbookBoard.Data.Repository
     public class EventRepository : IEventRepository
     {
         private readonly DataContext _eventRepository;
-
+        
         public EventRepository(DataContext eventRepository)
         {
             _eventRepository = eventRepository;
         }
 
-        public List<Event> GetAllEvents()
+        public IEnumerable<Event> GetAllEvents()
         {
-            return _eventRepository.EventList.ToList();
+            return _eventRepository.Events.Include(e => e.TelephoneBoard); 
         }
 
-        public Event GetEventById(int id)
+        public Event GetEvent(int id)
         {
-            return _eventRepository.EventList.First(u => u.Id == id);
+            return _eventRepository.Events.Find(id);
         }
 
-        public List<Event> GetEvents()
+        public Event AddEvent(Event e)
         {
-            List<Event> events = new List<Event>();
-            return events;
+            _eventRepository.Events.Add(e);
+            _eventRepository.SaveChanges();
+            return e;
         }
 
-        public void AddEvent(Event e)
+        public Event PutEvent(int id, Event e)
         {
-            _eventRepository.EventList.Add(new Event
-            {
-                Id = e.Id,
-                Name = e.Name,
-                Date = e.Date,
-                Day = e.Day,
-                EventLocation = e.EventLocation,
-                EventType = e.EventType,
-                Note = e.Note
-            });
-        }
-
-        public void PutEvent(int id, Event e)
-        {
-            var ev = _eventRepository.EventList.First(u => u.Id == id);
+            var ev = GetEvent(id);
+            if(ev != null) {
             ev.Day = e.Day;
             ev.Date = e.Date;
             ev.Name = e.Name;
@@ -57,14 +46,17 @@ namespace YearbookBoard.Data.Repository
             ev.EventType = e.EventType;
             ev.EventLocation = e.EventLocation;
             ev.Note = e.Note;
+                _eventRepository.SaveChanges(); //עדכון מסד הנתונים
+            }
+            return ev;
 
         }
 
         public void RemoveEvent(int id)
         {
-            var ev = _eventRepository.EventList.ToList().Find(u => u.Id == id);
+            var ev = GetEvent(id);
             if (ev != null)
-                _eventRepository.EventList.Remove(ev);
+                _eventRepository.Events.Remove(ev);
         }
     }
 }

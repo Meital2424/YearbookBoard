@@ -19,5 +19,10 @@ namespace YearbookBoard.Core.Entities
         public String? TelephoneNumber { get; set; }
 
         public String? AdditionalTelephone { get; set; }
+
+
+        public List<Event> Events { get; set; } //האירועים של הבת הנוכחית
+
+
     }
 }

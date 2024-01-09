@@ -13,9 +13,9 @@ namespace YearbookBoard.Core.Services
 
         public Updates GetUpdetes(int id);
 
-        public void AddUpdetes(Updates updates);
+        public Updates AddUpdetes(Updates updates);
 
-        public void PutUpdetes(int id, Updates updates);
+        public Updates PutUpdetes(int id, Updates updates);
 
         public void RemoveUpdetes(int id);
     }

@@ -13,9 +13,9 @@ namespace YearbookBoard.Core.Services
 
         public TelephoneBoard GetTelephoneBoard(int telephoneId);
 
-        public void AddTelephneBoard(TelephoneBoard t);
+        public TelephoneBoard AddTelephneBoard(TelephoneBoard t);
 
-        public void PutTelephneBoard(int id, TelephoneBoard t);
+        public TelephoneBoard PutTelephneBoard(int id, TelephoneBoard t);
 
         public void RemoveTelephoneBoard(TelephoneBoard t);
 

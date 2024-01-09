@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\YearbookBoard.Data\YearbookBoard.Data.csproj" />
     <ProjectReference Include="..\YearbookBoard.Service\YearbookBoard.Service.csproj" />
   </ItemGroup>
 

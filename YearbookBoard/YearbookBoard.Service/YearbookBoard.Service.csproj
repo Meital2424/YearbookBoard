@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YearbookBoard.Core\YearbookBoard.Core.csproj" />
-    <ProjectReference Include="..\YearbookBoard.Data\YearbookBoard.Data.csproj" />
   </ItemGroup>
 
 </Project>

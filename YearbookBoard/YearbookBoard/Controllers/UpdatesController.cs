@@ -37,17 +37,17 @@ namespace YearbookBoard.Api.Controllers
 
         // POST api/<UpdatesController>
         [HttpPost]
-        public void Post([FromBody] Updates u )
+        public ActionResult Post([FromBody] Updates u )
         {
 
-            _updatesServices.AddUpdetes(u);
+            return Ok( _updatesServices.AddUpdetes(u));
         }
 
         // PUT api/<UpdatesController>/5
         [HttpPut("{id}")]
-         public void Put(int id, [FromBody] Updates u)
+         public ActionResult Put(int id, [FromBody] Updates u)
         {
-            _updatesServices.PutUpdetes(id, u);
+            return Ok( _updatesServices.PutUpdetes(id, u));
             // var update = _context._updates.Find(u => u.Name == name);
             //if (update == null)
             //    return NotFound();

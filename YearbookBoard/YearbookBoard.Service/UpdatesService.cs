@@ -28,14 +28,14 @@ namespace YearbookBoard.Service
             return _Updates.GetUpdetes(id);
         }
 
-        public void AddUpdetes(Updates updates)
+        public Updates AddUpdetes(Updates updates)
         {
-            _Updates.AddUpdetes(updates);
+            return _Updates.AddUpdetes(updates);
         }
 
-        public void PutUpdetes(int id, Updates updates)
+        public Updates PutUpdetes(int id, Updates updates)
         {
-            _Updates.PutUpdetes(id, updates);
+            return _Updates.PutUpdetes(id, updates);
         }
 
         public void RemoveUpdetes(int id)
